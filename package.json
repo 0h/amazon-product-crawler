@@ -10,7 +10,6 @@
     "axios": "^0.16.2",
     "cheerio": "^1.0.0-rc.2",
     "mysql2": "^1.4.2",
-    "progress": "^2.0.0",
     "sequelize": "^4.15.2"
   },
   "devDependencies": {}
