@@ -3,17 +3,18 @@ const axios = require("axios");
 
 const productScrape = asin => {
   const config = {
-    url: "http://www.amazon.com/dp/" + asin,
+    url: "https://www.amazon.com/dp/" + asin,
     header: {
       "User-Agent":
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36"
     },
-    method: "get"
+    method: "get",
   };
 
   
   return axios(config)
   .then(response => {
+   
     var $ = cheerio.load(response.data);
     
     var price;
