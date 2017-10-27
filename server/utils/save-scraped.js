@@ -24,7 +24,7 @@ const saveExtractedData = data => {
       if (!created) {
         console.log("Product already exists");
       } else {
-        console.log("Product created successfully");
+        console.log(`Product created successfully: ${data.ASIN}`);
         console.log("Creating ranks for categories...");
 
         data.rank.forEach(rank => {
@@ -33,7 +33,7 @@ const saveExtractedData = data => {
             category: rank.Category,
             ASIN: data.ASIN
           });
-          console.log("Rank created for new product");
+          console.log(`#${rank.Rank} - ${rank.Category}`)
         });
       }
     })

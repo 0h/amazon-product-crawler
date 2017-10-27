@@ -13,7 +13,6 @@ const start = async () => {
     .sync()
     .then(res => {
       console.log("\nDatabase syncronization completed");
-      console.log("Fetching product info...");
     })
 
     const item = await models.ASINList.findOne({
@@ -21,6 +20,8 @@ const start = async () => {
         completed: 0
       }
     });
+
+    console.log(`Fetching product info: ${item.dataValues.ASIN}`)
 
     const scrapedProduct = await productScrape(item.dataValues.ASIN);
     saveExtractedData(scrapedProduct);
@@ -31,4 +32,4 @@ const start = async () => {
   }
 };
 start();
-// setInterval(start, 30000);
+setInterval(start, 30000);

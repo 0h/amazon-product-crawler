@@ -30,7 +30,7 @@ const productScrape = async asin => {
     price = 0.0;
   }
 
-  var alsoBought = $("div#session-sims-feature-1").length ? $("div#p13n-m-purchase-sims-feature-1") : $("div#p13n-m-purchase-sims-feature-2")
+  var alsoBought = $("div#p13n-m-purchase-sims-feature-1").length ? $("div#p13n-m-purchase-sims-feature-1") : $("div#p13n-m-purchase-sims-feature-2")
 
   const result = {
     title: $("#productTitle")
